@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box{
+        height: 250px;
+        width: 250px;
+        border: 1px solid black;
+        position: relative;
+    }
+    .dot{
+        width: 10px;
+        height: 10px;
+        background: black;
+        border-radius: 50%;
+        position: absolute;
+    }
+</style>
+<body>
+    <div class="box" id='box'>
+        <!-- <span class="dot" id='id'></span> -->
+    </div>
+    <script>
+        const box = document.getElementById('box');
+        
+        setInterval(()=>{
+            const dot = document.createElement('span');
+            dot.classList.add('dot');
+            console.log( Math.random() *100)
+            dot.style.top= Math.random() *100 + 'px';
+            dot.style.left = Math.random() * 100 + 'px';
+            box.appendChild(dot)
+        },2000)
+    </script>
+</body>
+</html>
